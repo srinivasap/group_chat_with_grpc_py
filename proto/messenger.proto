@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "edu.sjsu.cmpe273.fall18.assignment1";
+option java_outer_classname = "MessengerProto";
+option objc_class_prefix = "MSGR";
+
+package messenger;
+
+// Service
+service Messenger {
+  // authentication
+  rpc AuthUserGroup (Message) returns (Message) {}
+
+  // operation - receive messages as stream
+  rpc ReceiveMsg (Blank) returns (stream Message) {}
+
+  // operation - send message and with blank response
+  rpc SendMsg (Message) returns (Blank) {}
+}
+
+// message model
+message Message {
+  string name = 1;
+  string group = 2;
+  string msg = 3;
+}
+
+// blank message 
+message Blank {
+  string group = 1;
+}

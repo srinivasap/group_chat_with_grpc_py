@@ -1,0 +1,6 @@
+# Spartan Server Port
+port: 3000
+
+# encryption properties
+aes_secret_key: 'TheAESSecretKey1'
+aes_secret_kwargs: 'TheAESSecretKwar'
